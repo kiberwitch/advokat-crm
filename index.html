@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Главная — Адвокатский кабинет CRM</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__seal">АК</div>
+      <div>
+        <div class="sidebar__title">Адвокатский кабинет</div>
+        <div class="sidebar__subtitle">CRM · MVP</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="nav-link" data-page="dashboard" href="index.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/></svg>
+        Главная
+      </a>
+      <a class="nav-link" data-page="active" href="cases.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 9.5h17"/></svg>
+        Активные дела
+      </a>
+      <a class="nav-link" data-page="completed" href="completed.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.3l2.4 2.4 5-5.4"/></svg>
+        Завершённые дела
+      </a>
+      <a class="nav-link" data-page="debts" href="debts.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.3 9.6c0-1.1 1.1-2 2.7-2s2.7.8 2.7 1.8c0 2.6-5.4 1.2-5.4 3.9 0 1 1.1 1.8 2.7 1.8s2.7-.8 2.7-1.9"/></svg>
+        Задолженности
+      </a>
+      <a class="nav-link" data-page="archive" href="archive.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4.5" width="17" height="5" rx="1.2"/><path d="M5 9.5v9.5h14V9.5M10 13.5h4"/></svg>
+        Архив
+      </a>
+      <a class="nav-link" data-page="settings" href="settings.html">
+        <svg class="nav-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l1.9-1.5-2-3.3-2.2.8a7.6 7.6 0 0 0-2.6-1.5L14 2.5h-4l-.5 2.5a7.6 7.6 0 0 0-2.6 1.5l-2.2-.8-2 3.3 1.9 1.5a7.6 7.6 0 0 0 0 3l-1.9 1.5 2 3.3 2.2-.8a7.6 7.6 0 0 0 2.6 1.5l.5 2.5h4l.5-2.5a7.6 7.6 0 0 0 2.6-1.5l2.2.8 2-3.3z"/></svg>
+        Настройки
+      </a>
+    </nav>
+    <div class="sidebar__foot">
+      Демо-данные хранятся локально в браузере.<br>Без серверной части.
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="js-burger">☰</button>
+      <h1>Главная</h1>
+      <div class="topbar__meta" id="todayLabel"></div>
+    </div>
+
+    <div class="content">
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card__head">
+            <h2>Последние дела</h2>
+            <a class="pill-link" href="cases.html">Все активные →</a>
+          </div>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead>
+                <tr><th>ФИО</th><th>№ дела</th><th>Статус</th><th>Долг</th></tr>
+              </thead>
+              <tbody id="recentCasesBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h2>Задолженность по органам</h2></div>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead><tr><th>Орган</th><th>Начислено</th><th>Оплачено</th><th>Долг</th></tr></thead>
+              <tbody id="debtByBodyBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h2>Задолженность по клиентам</h2>
+          <a class="pill-link" href="debts.html">Подробнее →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead><tr><th>Клиент</th><th>Начислено</th><th>Оплачено</th><th>Долг</th></tr></thead>
+            <tbody id="debtByClientBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
